@@ -1,0 +1,23 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2512
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 const num = Math.floor(Math.random() * 10) + 1;\
+process.stdout.write('Guess a number 1-10?\\n');\
+process.stdin.on('data', data => \{\
+  let guess = data;\
+  process.stdout.write(`Your guess was $\{guess\}`);\
+  if (guess == num) \{\
+    process.stdout.write(`Correct you guessed $\{num\}\\n`);\
+    process.exit();\
+  \}\
+  else \{\
+    process.stdout.write(`Wrong Guess of $\{guess\}`);\
+  \}\
+\})\
+}

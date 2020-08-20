@@ -1,0 +1,31 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2512
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 const timer = 5000;\
+const outputInterval = 1000;\
+let val = 0;\
+process.stdout.write(`$\{timer/1000\} second delay\\n`);\
+const ready = () => \{\
+  output(`ready`);\
+  clearInterval(myInt);\
+  process.stdout.write('\\n');\
+\}\
+const counter = () => \{\
+  val++;\
+  //process.stdout.write(`$\{(timer/1000)-val\}`);\
+  output(`$\{(timer/1000)-val\} seconds left`);\
+\}\
+const output = (mes) => \{\
+  process.stdout.clearLine();\
+  process.stdout.cursorTo(0);\
+  process.stdout.write(mes);\
+\}\
+const myInt = setInterval(counter, outputInterval);\
+setTimeout(ready, timer);\
+}
